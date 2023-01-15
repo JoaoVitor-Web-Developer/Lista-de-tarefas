@@ -31,6 +31,7 @@ let selectedCategoryId = localStorage.getItem(LOCAL_STORAGE_SELECTED_CATEGORY_ID
 let categories = JSON.parse(localStorage.getItem(LOCAL_STORAGE_CATEGORIES_KEY)) || [];
 let todos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TODOS_KEY)) || [];
 
+
 //Evento inserir usuario
 if (!localStorage.getItem("user")) {
     var user = prompt("Insira seu nome:");
@@ -38,6 +39,7 @@ if (!localStorage.getItem("user")) {
 }
 var userName = localStorage.getItem("user");
 document.getElementById("userName").innerHTML = userName;
+
 
 //Evento adicionar categoria
 newCategoryForm.addEventListener('submit', (e) => {
@@ -176,7 +178,9 @@ function render() {
         currentlyViewing.innerHTML = `Você está visualizando <strong>Todas as categorias</strong>`;
     } else {
         const currentCategory = categories.find((category) => category._id === selectedCategoryId);
-        currentlyViewing.innerHTML = `Você está visualizando <strong>${currentCategory.category}</strong> <span> (DELETAR CATEGORIA) </span>`;
+        currentlyViewing.innerHTML = `Você está visualizando <strong>${currentCategory.category}</strong> <span class="material-symbols-outlined">
+        delete
+        </span>`;
     }
 }
 
