@@ -28,6 +28,13 @@ body {
     height: 100vh;
 }
 
+.logo {
+    position: fixed;
+    top: 630px;
+    left: -35px;
+}
+
+
 /* Conteudo app grid */
 
 .app {
