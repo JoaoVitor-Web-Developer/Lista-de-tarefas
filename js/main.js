@@ -31,6 +31,14 @@ let selectedCategoryId = localStorage.getItem(LOCAL_STORAGE_SELECTED_CATEGORY_ID
 let categories = JSON.parse(localStorage.getItem(LOCAL_STORAGE_CATEGORIES_KEY)) || [];
 let todos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TODOS_KEY)) || [];
 
+//Evento inserir usuario
+if (!localStorage.getItem("user")) {
+    var user = prompt("Insira seu nome:");
+    localStorage.setItem("user", user);
+}
+var userName = localStorage.getItem("user");
+document.getElementById("userName").innerHTML = userName;
+
 //Evento adicionar categoria
 newCategoryForm.addEventListener('submit', (e) => {
     e.preventDefault();
