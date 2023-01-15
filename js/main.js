@@ -178,7 +178,7 @@ function render() {
         currentlyViewing.innerHTML = `Você está visualizando <strong>Todas as categorias</strong>`;
     } else {
         const currentCategory = categories.find((category) => category._id === selectedCategoryId);
-        currentlyViewing.innerHTML = `Você está visualizando <strong>${currentCategory.category}</strong> <span class="material-symbols-outlined">
+        currentlyViewing.innerHTML = `Você está visualizando <strong>${currentCategory.category}</strong><span class="material-symbols-outlined">
         delete
         </span>`;
     }
